@@ -8,7 +8,7 @@ const outputBot = document.querySelector('.output-bot');
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 const recognition = new SpeechRecognition();
 
-recognition.lang = 'es-ES';
+recognition.lang = 'en-US';
 recognition.interimResults = false;
 recognition.maxAlternatives = 1;
 
@@ -53,6 +53,6 @@ socket.on('bot reply', function(replyText) {
   console.log('The bot answered: ' + replyText);
   synthVoice(replyText);
 
-  if(replyText == '') replyText = '(No tengo respuesta...)';
+  if(replyText == '') replyText = '(I have no answer...)';
   outputBot.textContent = replyText;
 });
